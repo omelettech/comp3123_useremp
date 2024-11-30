@@ -25,7 +25,11 @@ app.get('/', (req, res) => {
 })
 app.get('/favicon.ico', (req, res) => res.status(204));
 app.get('/about', (req, res) => {
-    res.send('routing works as well yay. I am awsaf btw')
+    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+    res.send('yayy')
+
+    return res.status(200).json({message: 'Email username must be unique AND all 3 fields required'});
 })
 
 //User management
