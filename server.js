@@ -7,10 +7,10 @@ const cors = require("cors");
 
 // const hostname = 'https://comp3123-assignment1.vercel.app';
 // const port =4000;
-app.use(cors({ origin: "http://localhost:3000" })); // Allow requests from this origin
 
 const app = express()
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors({ origin: "http://localhost:3000" })); // Allow requests from this origin
 app.use(express.json());
 
 
