@@ -53,7 +53,7 @@ app.post("/api/v1/user/signup", async (req, res) => {
         return res.status(500).json({message: "Error creating user"})
     }
 })
-app.post('/api/v1/user/login', async (req, res) => {
+app.post(' ', async (req, res) => {
     const {email, password} = req.body
     if (!(email && password)) {
         //Checks if all 3 fields are filled
@@ -124,12 +124,12 @@ app.get('/api/v1/emp/employees/:eid', async (req, res) => {
 app.put('/api/v1/emp/employees/:eid', async (req, res) => {
     try {
         const { eid } = req.params;  // Extract employee ID from the URL
-        const { name, position, department, salary } = req.body;
+        const { first_name,last_name,email, position, department, salary } = req.body;
 
         // Find the employee by ID and update
         const updatedEmployee = await Employee.findByIdAndUpdate(
             eid,
-            { name, position, department, salary },
+            {  first_name,last_name,email, position, department, salary },
             { new: true }
         );
 
