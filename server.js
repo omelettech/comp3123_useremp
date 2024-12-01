@@ -53,7 +53,7 @@ app.post("/api/v1/user/signup", async (req, res) => {
         return res.status(500).json({message: "Error creating user"})
     }
 })
-app.post(' ', async (req, res) => {
+app.post('/api/v1/user/login', async (req, res) => {
     const {email, password} = req.body
     if (!(email && password)) {
         //Checks if all 3 fields are filled
