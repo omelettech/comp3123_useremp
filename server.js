@@ -10,7 +10,7 @@ const cors = require("cors");
 
 const app = express()
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors({ origin: "http://localhost:3000" })); // Allow requests from this origin
+app.use(cors({ origin: ["http://localhost:3000","https://101400761-comp3123-assignment2.vercel.app"] })); // Allow requests from this origin
 app.use(express.json());
 
 
